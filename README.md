@@ -50,33 +50,30 @@ Example:
 The Hypersaline Tidal-Flat mapping is based on DeepLearning (DL) classifier U-Net. Thus it uses the COLAB structure, rather than purelly GEE code editor as the other classes in this repository.
 
 
-## 1. Mosaic and grid generation. 
+## 0. Mosaic and grid generation. 
 Start processing the annual cloud free composities, Mosaic.js (cloud removed median mosaics from 1985 - 2023).
 
-Example: users/solved/0 - Mosaic.js 
-`// linkar aqui o script`
+Example: [0-Mosaic.js](./0-Mosaic.js)
 
 
-## 2. Classification.
+## 1. Classification.
 
 
 The automatic classification of the Landsat mosaics was mainly performed on the Google Earth Engine platform, based on the Random Forest classifier (Breiman, 2001). The Hypersaline Salt-flat and the Aquaculture classes were deep-learning derived and thus classified outside the GEE.
 
-Example:
-users/solved/0 - Mosaic.js
+1.1. Execute the classification scripts. They are all starting with numebre 1 (1 - Apicum MapbiomasBased.js, 1 - BeD MapbiomasBased.js, 1 - Mangrove MapbiomasBased.js).
 
-2.2. Execute the classification scripts. They are all starting with numebre 1 (1 - Apicum MapbiomasBased.js, 1 - BeD MapbiomasBased.js, 1 - Mangrove MapbiomasBased.js).
 
-users/solved/1 - Mangrove MapbiomasBased.js `// linkar aqui o script`
+Mangrove: [1-Mangrove_Mapbiomas_Based.js](./1-Mangrove_Mapbiomas_Based.js)
 
-users/solved/1 - BeD MapbiomasBased.js `// linkar aqui o script`
+Beaches and Dunes: [1-BeD_Mapbiomas_Based.js](./1-BeD_Mapbiomas_Based.js) 
 
 users/solved/1 - Apicum MapbiomasBased.js `// linkar aqui o script`
 
-## 3. Gap-fill & Temporal filter.
+## 2. Gap-fill & Temporal filter.
 Gap-fill: Replace no-data values using the nearest available valid class.
 Temporal Filter: Apply a 3-year moving window to correct temporal inconsistencies.
-Example: [4-GapFill_TemporalFilter.js](./4-GapFill_TemporalFilter.js)
+Example: [2-Temporal_Filter.js](./2-Temporal_Filter.js)
 
 |RULE| INPUT (YEAR) | OUTPUT|
 |:--:|:------------:|:-----:|
@@ -84,14 +81,14 @@ Example: [4-GapFill_TemporalFilter.js](./4-GapFill_TemporalFilter.js)
 | GR| Tg / N-Tg / Tg | Tg / Tg / Tg |
 | GR| N-Tg / Tg / N-Tg | N-Tg / N-Tg / N-Tg
 
-## 4. Spatial filter.
+## 3. Spatial filter.
 Spatial Filter: Use GEE's connectedPixelCount to remove isolated pixels, ensuring a minimum mapping unit of ~1 ha.
-Example: [5-SpatialFilter.js](./5-SpatialFilter)
+Example: [3-Spatial_Filter.js](./3-Spatial_Filter.js)
 
-#### 5. Frequency filter
+#### 4. Frequency filter
 Frequency Filter: Remove classes with less than 10% temporal persistence.
 
-Example: [6-FrequencyFilter.js](./6-FrequencyFilter.js)
+Example: [4-Frequency_Filter.js](./4-Frequency_Filter.js)
 
 ## 5. Integration. 
 
