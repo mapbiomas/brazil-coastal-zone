@@ -85,7 +85,7 @@ Example: [2-Temporal_Filter.js](./2-Temporal_Filter.js)
 Spatial Filter: Use GEE's connectedPixelCount to remove isolated pixels, ensuring a minimum mapping unit of ~1 ha.
 Example: [3-Spatial_Filter.js](./3-Spatial_Filter.js)
 
-#### 4. Frequency filter
+## 4. Frequency filter
 Frequency Filter: Remove classes with less than 10% temporal persistence.
 
 Example: [4-Frequency_Filter.js](./4-Frequency_Filter.js)
