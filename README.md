@@ -73,13 +73,25 @@ users/solved/1 - BeD MapbiomasBased.js `// linkar aqui o script`
 
 users/solved/1 - Apicum MapbiomasBased.js `// linkar aqui o script`
 
-## 3. Temporal filter.
-Example:
-users/solved/2 - Temporal Filter.js
+## 3. Gap-fill & Temporal filter.
+Gap-fill: Replace no-data values using the nearest available valid class.
+Temporal Filter: Apply a 3-year moving window to correct temporal inconsistencies.
+Example: [4-GapFill_TemporalFilter.js](./4-GapFill_TemporalFilter.js)
 
-## 4. Frequency filter.
-Example:
-users/solved/3 - Frequency Filter.js
+|RULE| INPUT (YEAR) | OUTPUT|
+|:--:|:------------:|:-----:|
+| - | T1 / T2 / T3 | T1 / T2 / T3 |
+| GR| Tg / N-Tg / Tg | Tg / Tg / Tg |
+| GR| N-Tg / Tg / N-Tg | N-Tg / N-Tg / N-Tg
+
+## 4. Spatial filter.
+Spatial Filter: Use GEE's connectedPixelCount to remove isolated pixels, ensuring a minimum mapping unit of ~1 ha.
+Example: [5-SpatialFilter.js](./5-SpatialFilter)
+
+#### 5. Frequency filter
+Frequency Filter: Remove classes with less than 10% temporal persistence.
+
+Example: [6-FrequencyFilter.js](./6-FrequencyFilter.js)
 
 ## 5. Integration. 
 
