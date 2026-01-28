@@ -1,5 +1,5 @@
 <p align="right">
-  <img src="../misc/Solved_ vetor 1.png" width="200">
+  <img src="misc/Solved_ vetor 1.png" width="200">
 </p>
 
 # Coastal Zone Mapping
