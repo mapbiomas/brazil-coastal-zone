@@ -1,50 +1,48 @@
 <p align="right">
-  <img src="./misc/Solved_ vetor 1.png" width="200">
+  <img src="../misc/Solved_ vetor 1.png" width="200">
 </p>
 
 # Coastal Zone Mapping
 
 # About
-This repository provides the steps to map classes located on the Brazilian Coastal Zone using Landsat Top of Atmosphere (TOA) mosaics.
+This repository provides the steps to map classes located in the **Brazilian Coastal Zone** using Landsat Top-of-Atmosphere (TOA) mosaics.
 
-The target classes are: mangroves, beaches, dunes and sand-spots (BDS), and hypersaline tidal flats (HTF). Apart from  HTF, that utilizes deep learning model, the remains detections are based on Random Forest.
+The target classes are **mangroves; beaches, dunes, and sand spots (BDS); and hypersaline tidal flats (HTF)**. With the exception of HTF, which is mapped using a deep learning model, the remaining classes are detected using a Random Forest algorithm.
 
-The deep learning detection process focuses on identifying HTF areas using Landsat TOA mosaics. The process involves generating annual cloud-free mosaics using Google Earth Engine (GEE) and applying a [U-Net](https://arxiv.org/abs/1505.04597) deep learning model for segmentation.
+The deep learning workflow focuses on identifying HTF areas from Landsat TOA mosaics. It involves generating annual cloud-free mosaics using Google Earth Engine (GEE) and applying a [U-Net](https://arxiv.org/abs/1505.04597) model for semantic segmentation.
 
 For more information about the methodology, please consult the [Coastal Zone Algorithm Theoretical Basis Document.](https://doi.org/10.58053/MapBiomas/D0UVI6)
 
-
 # How to use
 ## 0. Prepare environment.
-One must have a Google Earth Engine Account ([Get Started](https://earthengine.google.com)), be able to create a GEE repository in the code editor and upload the modules in it.
+A Google Earth Engine account is required ([Get Started](https://earthengine.google.com)). Users must be able to create a GEE repository in the Code Editor and upload the required modules.
 
-Some sort of GPU capability is also required for the training process.
+GPU resources are also required for the model training process.
 
 ## 1. Start processing the annual cloud free composities
 Landsat TOA Mosaics:
         Use USGS Landsat Collection 2 Tier 1 TOA imagery.
-        Generate annual cloud-free mosaics from January 1st to December 31st from 1985-2024.
-        Apply a median filter to remove clouds and shadows.
+        Generate annual cloud-free mosaics from January 1st to December 31st for the period 1985–2024.
+        Apply a median filter to reduce clouds and cloud shadows.
 
 * Script: [1-mosaic-generation.js](./1-mosaic-generation.js)
 
-
+--- 
 ## Hypersaline Tidal Flat Deep Learning Approach
 ### 2. Sampling Script 
-Vizualise the training and validation regions, along with the supervised layer available publicly
+Visualize the training and validation regions along with the publicly available supervised layer.
 
 * Script:  [HTF/2-train-test-dataset.js](./HTF/2-train-test-dataset.js)
 
-### 3. Execute the Neural Network.
+### 3. Neural network execution
 #### 3.1. Training
 Training Samples:
-        Select training samples based on aquaculture and non-aquaculture categories.
-        No differentiation between coastal and continental aquaculture is made during the segmentation.
+        Select samples based on htf and non-htf categories.
 
 #### 3.2. Prediction
 Every prediction is a binary set of pixel values. 0 - "non-htf", 1 - "htf"
 
-Semantic Segmentation
+The task is framed as semantic segmentation.
 
 Model:
 Use a U-Net neural network to perform semantic segmentation on local servers.
@@ -61,15 +59,25 @@ Output         | 2 (htf and non-htf)|
 
 * Script: [HTF/3-Jupyter Notebook](./HTF/3-mb10_htf.ipynb)
 
+--- 
 
+## Machine Learning Approach
+## 2. Classification.
+Mangroves and beaches, dunes, and sand spots (BDS) were classified using a pixel-wise Random Forest algorithm (Breiman, 2001).
 
+For mangroves, the analysis was performed separately for different regions, which are defined in [Mangrove/regiongs.js](./Mangrove/regions.js).
+
+Scripts used:
+* Mangrove: [Mangrove/2-mangrove_mapping.js](./Mangrove/2-mangrove_mapping.js)
+* Beaches, Dunes and Sand-Spots: [BDS/2-bds_mapping.js](./BDS/2-bds_mapping.js)
+
+--- 
 # Filter Chain
 ## 4. Gap-fill & Temporal filter
 Gap-fill: Replace no-data values using the nearest available valid class.
 Temporal Filter: Apply a 3-year moving window to correct temporal inconsistencies.
 
 * Script:  [4-gap-fill-temporal-filter.js](./4-gap-fill-temporal-filter.js)
-
 |RULE| INPUT (YEAR) | OUTPUT|
 |:--:|:------------:|:-----:|
 | - | T1 / T2 / T3 | T1 / T2 / T3 |
@@ -90,14 +98,15 @@ P.S. The threshold frequency may vary according to class, collection or satellit
 
 ## 7. Integration. 
 
-Every detection is a binary set of pixel values. 0 - "non-class", 1 - "class of interest" (eg. 0 - Non-Mangrove, 1 - Mangrove)
+Every detection is a binary set of pixel values. 0 - "non-class", 1 - "class of interest".
 
 Each mapping (been segmentation for the HTF and classification to the rest) are then integrated. Mangrove is placed above all other classes, then Hypersaline Tidal-Flats and Beach, Dune and Sand Spots. Shallow Coral Reefs are published separately, under all other MapBiomas classes.
 
 * Script:  [7-integration.js](./7-integration.js)
 
+--- 
 # References
-### REFERENCE DATA
+### DATA
 
 |CLASS | REFERENCES|
 |:----:|:---------:|
@@ -106,9 +115,7 @@ Each mapping (been segmentation for the HTF and classification to the rest) are 
 |BEACHES, DUNES AND SAND SPOTS|MapBiomas Collection 8, Atlas Dos Remanescentes Florestais da Mata Atlântica (SOS Mata Atlântica, 2020), Prates, Gonçalves and Rosa, 2010, Panorama da Conservação dos Ecossistemas Costeiros e Marinhos no Brasil (MMA, 2010), plus visual inspection.|
 |SHALLOW CORAL REEFS| Áreas Prioritárias para Conservação da Biodiversidade (MMA), Panorama da Conservação dos Ecossistemas Costeiros e Marinhos no Brasil (MMA, 2010), Atlas dos Recifes de Corais nas Unidades de Conservação Brasileiras (MMA), Allen Coral Reef Atlas, and UNEP-WCMC Global Distribution of Coral Reefs.|
 
---- 
-
-### REFERENCE LITERATURE
+###  LITERATURE
 ABADI, M. et al. TensorFlow: Large-scale machine learning on heterogeneous systems. Methods in Enzymology, 2015. 
 
 Adey, W. H. (2000). Coral Reef Ecosystems and Human Health: Biodiversity Counts! Ecosystem Health, 6(4), 227–236. doi:10.1046/j.1526-0992.2000.006004227.x
