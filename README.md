@@ -1,5 +1,5 @@
 <p align="right">
-  <img src="./misc/Solved_ vetor 1.png" width="200">
+  <img src="./misc/Solved_ 1.png" width="200">
 </p>
 
 # Coastal Zone Mapping – MapBiomas Brazil
@@ -60,11 +60,8 @@ A detailed description of the theoretical background and methodological decision
 
 [Coastal Zone Algorithm Theoretical Basis Document.](https://doi.org/10.58053/MapBiomas/D0UVI6)
 
----
 
 ## Notes
 This README provides a **general overview** of the repository.  
 For collection-specific details, please refer to the README files inside each `MapBiomasX/` directory.
-
----
 
