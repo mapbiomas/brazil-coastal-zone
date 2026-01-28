@@ -65,7 +65,7 @@ Output         | 2 (htf and non-htf)|
 ## 2. Classification.
 Mangroves and beaches, dunes, and sand spots (BDS) were classified using a pixel-wise Random Forest algorithm (Breiman, 2001).
 
-For mangroves, the analysis was performed separately for different regions, which are defined in [Mangrove/regiongs.js](./Mangrove/regions.js).
+For mangroves, the analysis was performed separately for different regions, which are defined in [Mangrove/regions.js](./Mangrove/regions.js).
 
 Scripts used:
 * Mangrove: [Mangrove/2-mangrove_mapping.js](./Mangrove/2-mangrove_mapping.js)
