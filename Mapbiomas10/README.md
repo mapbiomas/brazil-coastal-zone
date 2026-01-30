@@ -69,7 +69,8 @@ For mangroves, the analysis was performed separately for different regions, whic
 
 Scripts used:
 * Mangrove: [Mangrove/2-mangrove_mapping.js](./Mangrove/2-mangrove_mapping.js)
-* Beaches, Dunes and Sand-Spots: [BDS/2-bds_mapping.js](./BDS/2-bds_mapping.js)
+* Beaches, Dunes and Sand-Spots: [BDS/2-classification.js](./BDS/2-classification.js)
+* Coastal Reefs: [REEFS/2-classification.js](./REEFS/2-classification.js)
 
 --- 
 # Filter Chain
@@ -100,7 +101,7 @@ P.S. The threshold frequency may vary according to class, collection or satellit
 
 Every detection is a binary set of pixel values. 0 - "non-class", 1 - "class of interest".
 
-Each mapping (been segmentation for the HTF and classification to the rest) are then integrated. Mangrove is placed above all other classes, then Hypersaline Tidal-Flats and Beach, Dune and Sand Spots. Shallow Coral Reefs are published separately, under all other MapBiomas classes.
+Each mapping (been segmentation for the HTF and classification to the rest) are then integrated. Mangrove is placed above all other classes, then Hypersaline Tidal-Flats and Beach, Dune and Sand Spots. Shallow  Reefs are published separately, under all other MapBiomas classes.
 
 * Script:  [7-integration.js](./7-integration.js)
 
@@ -113,7 +114,7 @@ Each mapping (been segmentation for the HTF and classification to the rest) are 
 |MANGROVE|MapBiomas Collection 8, Giri et al., 2011, ICMBio Mangrove Attlas (ICMBio, 2018), Global Mangrove Watch (Bunting et al., 2018; Thomas et al., 2018), Diniz et al., 2019, Panorama da Conservação dos Ecossistemas Costeiros e Marinhos no Brasil (MMA, 2010), plus visual inspection.|
 |HYPERSALINE TIDAL FLAT| MapBiomas Collection 8, Atlas Dos Remanescentes Florestais da Mata Atlântica (SOS Mata Atlântica, 2020), Prates, Gonçalves and Rosa, 2010, Panorama da Conservação dos Ecossistemas Costeiros e Marinhos no Brasil (MMA, 2010), plus visual inspection.|
 |BEACHES, DUNES AND SAND SPOTS|MapBiomas Collection 8, Atlas Dos Remanescentes Florestais da Mata Atlântica (SOS Mata Atlântica, 2020), Prates, Gonçalves and Rosa, 2010, Panorama da Conservação dos Ecossistemas Costeiros e Marinhos no Brasil (MMA, 2010), plus visual inspection.|
-|SHALLOW CORAL REEFS| Áreas Prioritárias para Conservação da Biodiversidade (MMA), Panorama da Conservação dos Ecossistemas Costeiros e Marinhos no Brasil (MMA, 2010), Atlas dos Recifes de Corais nas Unidades de Conservação Brasileiras (MMA), Allen Coral Reef Atlas, and UNEP-WCMC Global Distribution of Coral Reefs.|
+|SHALLOW COASTAL REEFS| Áreas Prioritárias para Conservação da Biodiversidade (MMA), Panorama da Conservação dos Ecossistemas Costeiros e Marinhos no Brasil (MMA, 2010), Atlas dos Recifes de Corais nas Unidades de Conservação Brasileiras (MMA), Allen Coral Reef Atlas, and UNEP-WCMC Global Distribution of Coral Reefs.|
 
 ###  LITERATURE
 ABADI, M. et al. TensorFlow: Large-scale machine learning on heterogeneous systems. Methods in Enzymology, 2015. 
