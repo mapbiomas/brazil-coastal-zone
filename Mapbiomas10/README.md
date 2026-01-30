@@ -7,7 +7,7 @@
 # About
 This repository provides the steps to map classes located in the **Brazilian Coastal Zone** using Landsat Top-of-Atmosphere (TOA) mosaics.
 
-The target classes are **mangroves; beaches, dunes, and sand spots (BDS); and hypersaline tidal flats (HTF)**. With the exception of HTF, which is mapped using a deep learning model, the remaining classes are detected using a Random Forest algorithm.
+The target classes are **mangroves; beaches, dunes, and sand spots (BDS); hypersaline tidal flats (HTF) and shallow coastal reefs**. With the exception of HTF, which is mapped using a deep learning model, the remaining classes are detected using a Random Forest algorithm.
 
 The deep learning workflow focuses on identifying HTF areas from Landsat TOA mosaics. It involves generating annual cloud-free mosaics using Google Earth Engine (GEE) and applying a [U-Net](https://arxiv.org/abs/1505.04597) model for semantic segmentation.
 
