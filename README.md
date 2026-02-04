@@ -5,7 +5,7 @@
 # Coastal Zone Mapping
 
 ## Overview
-This repository contains the workflows and methodologies used to map land cover and land use classes in the **Brazilian Coastal Zone** within the MapBiomas Braszil project.
+This repository contains the workflows and methodologies used to map land cover and land use classes in the **Brazilian Coastal Zone** within the MapBiomas Brazil project.
 
 The mapping is based on Landsat Top-of-Atmosphere (TOA) imagery and combines machine learning and deep learning approaches to generate annual maps for multiple coastal environments.
 
