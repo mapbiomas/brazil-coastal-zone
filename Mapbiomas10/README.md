@@ -79,6 +79,7 @@ Gap-fill: Replace no-data values using the nearest available valid class.
 Temporal Filter: Apply a 3-year moving window to correct temporal inconsistencies.
 
 * Script:  [4-gap-fill-temporal-filter.js](./4-gap-fill-temporal-filter.js)
+
 |RULE| INPUT (YEAR) | OUTPUT|
 |:--:|:------------:|:-----:|
 | - | T1 / T2 / T3 | T1 / T2 / T3 |
