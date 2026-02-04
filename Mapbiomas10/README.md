@@ -165,7 +165,7 @@ QUEIROZ, L. et al. Shrimp aquaculture in the federal state of Ceará, 1970–201
 
 ROGERS, A. S.; KEARNEY, M. S. Reducing signature variability in unmixing coastal marsh Thematic Mapper scenes using spectral indices. International Journal of Remote Sensing, 2004. 
 
-SOS MATA ATL NTICA. Atlas dos remanescentes florestais da Mata Atlântica, período 2019-2020. São Paulo, Brasil. Fundação SOS Mata Atlantica. Instituto Nacional das Pesquisas Espaciais, 2020. 
+SOS MATA ATLÂNTICA. Atlas dos remanescentes florestais da Mata Atlântica, período 2019-2020. São Paulo, Brasil. Fundação SOS Mata Atlantica. Instituto Nacional das Pesquisas Espaciais, 2020. 
 
 SOSMA; INPE. ATLAS DOS REMANESCENTES FLORESTAIS DA MATA ATL NTICA PERÍODO 2016-2017. Fundação SOS Mata Atlântica e Instituto de Pesquisas Espaciais, 2018. 
 
