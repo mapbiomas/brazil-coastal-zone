@@ -3,6 +3,7 @@
 </p>
 
 # Coastal Zone Mapping
+#### Developed by: _[Solved - Soluções em Geoinformação](https://solved.eco.br)_
 
 ## Overview
 This repository contains the workflows and methodologies used to map land cover and land use classes in the **Brazilian Coastal Zone** within the MapBiomas Brazil project.

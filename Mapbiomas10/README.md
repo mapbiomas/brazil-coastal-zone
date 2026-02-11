@@ -3,6 +3,7 @@
 </p>
 
 # Coastal Zone Mapping
+#### Developed by: _[Solved - Soluções em Geoinformação](https://solved.eco.br)_
 
 # About
 This repository provides the steps to map classes located in the **Brazilian Coastal Zone** using Landsat Top-of-Atmosphere (TOA) mosaics.
